@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://ws/" targetNamespace="http://ws/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="alterCadastro" type="tns:alterCadastro" />
+  <xs:element name="alterCadastroResponse" type="tns:alterCadastroResponse" />
+  <xs:element name="cadastrarUser" type="tns:cadastrarUser" />
+  <xs:element name="cadastrarUserResponse" type="tns:cadastrarUserResponse" />
+  <xs:element name="consultUser" type="tns:consultUser" />
+  <xs:element name="consultUserResponse" type="tns:consultUserResponse" />
+  <xs:element name="deposito" type="tns:deposito" />
+  <xs:element name="depositoResponse" type="tns:depositoResponse" />
+  <xs:element name="saldoUser" type="tns:saldoUser" />
+  <xs:element name="saldoUserResponse" type="tns:saldoUserResponse" />
+  <xs:element name="saque" type="tns:saque" />
+  <xs:element name="saqueResponse" type="tns:saqueResponse" />
+  <xs:complexType name="cadastrarUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nome" type="xs:string" />
+      <xs:element minOccurs="0" name="senha" type="xs:string" />
+      <xs:element minOccurs="0" name="saldo" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cadastrarUserResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="alterCadastro">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="oldNome" type="xs:string" />
+      <xs:element minOccurs="0" name="newNome" type="xs:string" />
+      <xs:element minOccurs="0" name="oldSenha" type="xs:string" />
+      <xs:element minOccurs="0" name="newSenha" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="alterCadastroResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="saque">
+    <xs:sequence>
+      <xs:element name="valor" type="xs:double" />
+      <xs:element minOccurs="0" name="nome" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="saqueResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="consultUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nome" type="xs:string" />
+      <xs:element minOccurs="0" name="senha" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="consultUserResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="saldoUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nome" type="xs:string" />
+      <xs:element minOccurs="0" name="senha" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="saldoUserResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="deposito">
+    <xs:sequence>
+      <xs:element name="valor" type="xs:double" />
+      <xs:element minOccurs="0" name="nome" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="depositoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
